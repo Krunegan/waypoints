@@ -1,5 +1,3 @@
-# Waypoints (mod)
-
 ## Introduction
 
 Allows players to create, manage and view waypoints in the game. A waypoint is a mark that the player can set at a specific location in the world to facilitate navigation and orientation.
@@ -45,5 +43,6 @@ Guild commands:
 - `/guild_delete <guild_name>` — (leader) delete the entire guild (and clear HUDs).
 
 ## License
+
 
 * MIT License (MIT) for the code.
