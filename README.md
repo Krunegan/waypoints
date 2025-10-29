@@ -1,3 +1,5 @@
+# Waypoints (mod)
+
 ## Introduction
 
 Allows players to create, manage and view waypoints in the game. A waypoint is a mark that the player can set at a specific location in the world to facilitate navigation and orientation.
@@ -6,76 +8,41 @@ This implements various functions to interact with waypoints, such as setting ne
 
 ## Available Commands:
 
+Player Commands:
+- `/wp_set <name> <color>` — creates a waypoint at your location with a color in RRGGBB format.
+- `/wp_set_coord <name> <x,y,z> <color>` — creates a waypoint at given coordinates.
+- `/wp_unset <name>` — deletes a waypoint.
+- `/wp_list` — lists your saved waypoints.
+- `/wp_show` — displays all your waypoints in the HUD.
+- `/wp_hide` — hides all waypoint HUDs.
+- `/wp_show_s <name>` — displays only the HUD of the specified waypoint.
+- `/wp_move <name> <x,y,z>` — moves a waypoint.
+- `/wp_cc <name> <color>` — changes the color of a waypoint.
+- `/wp_dis <name>` — Shows the distance to the waypoint.
+- `/wp_delete_all` — Deletes all your waypoints.
+- `/wp_info <name>` — Details (position, color, distance).
+- `/wp_rename <old> <new>` — Renames a waypoint.
+- `/wp_toggle_hud <name>` — Toggles a specific HUD.
 
-`/wp_set <name> <color>` <br>
-- Description: Set a new waypoint with a specified name and color. <br>
-- Usage: /wp_set base 00FF00 <br>
-- This command will create a waypoint named "base" with a green color (#00FF00).
+Admin commands:
+- `/wp_tp <name> [player]` — Teleports to the waypoint's position (private: `waypoints_tp`).
 
-`/wp_show` <br>
-- Description: Show all waypoints in the HUD. <br>
-- Usage: /wp_show <br>
-- This command displays all waypoints on your screen, showing their names and positions. <br>
-
-`/wp_hide` <br>
-- Description: Hide all waypoints from the HUD. <br>
-- Usage: /wp_hide <br>
-- Hides all waypoints that are currently displayed on the screen. <br>
-
-`/wp_unset <name>` <br>
-- Description: Remove a specific waypoint by its name. <br>
-- Usage: /wp_unset base <br>
-- Removes the waypoint named "base" from your list of waypoints. <br>
-
-`/wp_list` <br>
-- Description: List all waypoints along with their details. <br>
-- Usage: /wp_list <br>
-- Displays a list of all waypoints with their names, colors, and positions. <br>
-
-`/wp_show_s <name>` <br>
-- Description: Show a specific waypoint in the HUD and hide others. <br>
-- Usage: /wp_show_s base <br>
-- Displays only the waypoint named "base" on the HUD, hiding all other waypoints. <br>
-
-`/wp_set_coord <name> <x,y,z> <color>` <br>
-- Description: Set a waypoint at specific coordinates with a specified color. <br>
-- Usage: /wp_set_coord home 100,50,200 FF0000 <br>
-- Creates a waypoint named "home" at coordinates (100, 50, 200) with a red color (#FF0000). <br>
-
-`/wp_move <name> <x,y,z>` <br>
-- Description: Move a waypoint to a new position. <br>
-- Usage: /wp_move base 150,60,180 <br>
-- Moves the waypoint named "base" to the coordinates (150, 60, 180). <br>
-
-`/wp_cc <name> <color>` <br>
-- Description: Change the color of an existing waypoint. <br>
-- Usage: /wp_cc base 0000FF <br>
-- Changes the color of the waypoint "base" to blue (#0000FF). <br>
-
-`/wp_dis <name>` <br>
-- Description: Show the distance to a specific waypoint. <br>
-- Usage: /wp_dis base <br>
-- Displays the distance from your current position to the waypoint named "base." <br>
-
-`/wp_delete_all` <br>
-- Description: Delete all waypoints of the current user. <br>
-- Usage: /wp_delete_all <br>
-- Deletes all waypoints associated with your player name. <br>
-
-`/wp_info <name>` <br>
-- Description: Show detailed information about a specific waypoint. <br>
-- Usage: /wp_info base <br>
-- Displays detailed information about the waypoint named "base," including its position, color, and distance from your current position. <br>
-
-`/wp_rename <old_name> <new_name>` <br>
-- Description: Rename an existing waypoint. <br>
-- Usage: /wp_rename base outpost <br>
-- Renames the waypoint from "base" to "outpost." <br>
-
-`/wp_toggle_hud <name>` <br>
-- Description: Toggle the HUD display for a specific waypoint. <br>
-- Usage: /wp_toggle_hud base <br>
-- Toggles the visibility of the HUD display for the waypoint named "base." <br>
+Guild commands:
+- `/guild_create <guild_name> [member1, member2, ...]` — Creates a guild and optionally sends invitations.
+- `/guild_invite <guild_name> <player>` — (Leader) invites a player.
+- `/guild_accept <guild_name>` — Accept an invitation.
+- `/guild_decline <guild_name>` — Decline an invitation.
+- `/guild_requests` — List pending invitations for you.
+- `/guild_list [guild_name]` — List the guilds you belong to, or details of the specified guild (members and waypoints).
+- `/guild_leave <guild_name>` — Leave a guild.
+- `/guild_remove_member <guild_name> <player>` — (Leader) Removes a member.
+- `/guild_transfer <guild_name> <new_leader>` — (Leader) Transfers leadership to another member.
+- `/guild_wp_set <guild_name> <wp_name> <x,y,z|here> [color]` — (leader) create guild waypoint.
+- `/guild_wp_move <guild_name> <wp_name> <x,y,z>` — (leader) move guild waypoint.
+- `/guild_wp_cc <guild_name> <wp_name> <color>` — (leader) change color.
+- `/guild_wp_unset <guild_name> <wp_name>` — (leader) remove waypoint.
+- `/guild_wp_toggle <guild_name> <wp_name|all>` — toggle guild waypoint visibility for your HUD.
+- `/guild_delete <guild_name>` — (leader) delete the entire guild (and clear HUDs).
 
 ## License
 
